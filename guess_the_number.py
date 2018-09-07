@@ -14,11 +14,20 @@ def generate_secret(low, high):
     '''Generate a secret number for the user to guess'''
     return random.randint(low, high)
 
+def guess_isinteger(value):
+    try:
+        int(value)
+        return True
+    except ValueError:
+        return False
 
 def get_guess():
     '''get user's guess'''
-    return int(input('Guess the secret number? '))
+    while True:
+        guessinput = input('Guess the secret number? ')
 
+        if guess_isinteger(guessinput):
+            return int(guessinput)
 
 def check_guess(guess, secret):
     '''compare guess and secret, return string describing result of comparison'''
