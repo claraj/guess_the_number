@@ -38,13 +38,21 @@ def main():
 
     (low, high) = configure_range()
     secret = generate_secret(low, high)
+    counts = 0
 
     while True:
         guess = get_guess()
         result = check_guess(guess, secret)
-        print(result)
+        counts += 1
+        print('You tried ' + result)
+
+
+
 
         if result == correct:
+
+            print(counts)
+
             break
 
 
