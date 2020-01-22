@@ -21,19 +21,25 @@ def get_guess():
 
 
 def check_guess(guess, secret):
+    count = 0
+
     '''compare guess and secret, return string describing result of comparison'''
     if guess == secret:
+        count += 1
         return correct
     if guess < secret:
+        count += 1
         return too_low
+        count += 1
     if guess > secret:
+        count += 1
         return too_high
 
 
 def main():
-
     (low, high) = configure_range()
     secret = generate_secret(low, high)
+
 
     while True:
         guess = get_guess()
