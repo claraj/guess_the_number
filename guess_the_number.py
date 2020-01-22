@@ -4,6 +4,14 @@ correct = 'you guessed correctly!'
 too_low = 'too low'
 too_high = 'too high'
 
+def validate_int(num):
+  while True:
+     try:
+         num = int(num)
+         return num
+     except ValueError:
+         num = input("Oops!  That was no valid number.  Try again...")
+         
 
 def configure_range():
     '''Set the high and low values for the random number'''
@@ -17,7 +25,9 @@ def generate_secret(low, high):
 
 def get_guess():
     '''get user's guess'''
-    return int(input('Guess the secret number? '))
+    guess = input('Guess the secret number? ')
+    return int(validate_int(guess))
+
 
 
 def check_guess(guess, secret):
