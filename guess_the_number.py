@@ -35,20 +35,25 @@ def check_guess(guess, secret):
 
 
 def main():
+    rerun = True
+    while rerun:
+        (low, high) = configure_range()
+        secret = generate_secret(low, high)
+        counter = 0
+        while True:
+            guess = get_guess()
+            counter +=1
+            result = check_guess(guess, secret)
+            print(result)
 
-    (low, high) = configure_range()
-    secret = generate_secret(low, high)
-    counter = 0
-    while True:
-        guess = get_guess()
-        counter +=1
-        result = check_guess(guess, secret)
-        print(result)
-
-        if result == correct:
-            print(f'You took {counter} guesses')
-            break
-
+            if result == correct:
+                print(f'You took {counter} guesses')
+                rerun_string = input('Would you like to play again? Enter Y to play again  ')
+                if rerun_string.lower() != 'y':
+                    rerun = False
+                    
+                break
+        
 
 if __name__ == '__main__':
     main()
