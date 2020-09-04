@@ -3,7 +3,7 @@ import random
 correct = 'you guessed correctly!'
 too_low = 'too low'
 too_high = 'too high'
-
+count = 0
 
 def configure_range():
     '''Set the high and low values for the random number'''
@@ -16,9 +16,12 @@ def generate_secret(low, high):
 
 
 def get_guess():
+    global count
     '''get user's guess'''
     return int(input('Guess the secret number? '))
+    count += 1
 
+    return count
 
 def check_guess(guess, secret):
     '''compare guess and secret, return string describing result of comparison'''
@@ -28,6 +31,8 @@ def check_guess(guess, secret):
         return too_low
     if guess > secret:
         return too_high
+
+
 
 
 def main():
