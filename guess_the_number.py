@@ -16,12 +16,9 @@ def generate_secret(low, high):
 
 
 def get_guess():
-    global count
     '''get user's guess'''
     return int(input('Guess the secret number? '))
-    count += 1
-
-    return count
+    
 
 def check_guess(guess, secret):
     '''compare guess and secret, return string describing result of comparison'''
@@ -39,13 +36,15 @@ def main():
 
     (low, high) = configure_range()
     secret = generate_secret(low, high)
-
+    counter = 0
     while True:
         guess = get_guess()
+        counter +=1
         result = check_guess(guess, secret)
         print(result)
 
         if result == correct:
+            print(f'You took {counter} guesses')
             break
 
 
