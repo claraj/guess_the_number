@@ -1,8 +1,8 @@
 import random
 
-correct = 'you guessed correctly!'
-too_low = 'too low'
-too_high = 'too high'
+correct = 'You guessed correctly!'
+too_low = 'Too Low'
+too_high = 'Too High'
 
 def configure_range():
     '''Set the high and low values for the random number'''
