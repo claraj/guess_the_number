@@ -17,7 +17,11 @@ def generate_secret(low, high):
 
 def get_guess():
     '''get user's guess'''
-    return int(input('Guess the secret number? '))
+    try:
+        user_input = int(input('Guess the secret number? '))
+    except ValueError as err:
+        return f"{type(err)}: please enter a integer \"{err}\""
+    return user_input
 
 
 def check_guess(guess, secret):
