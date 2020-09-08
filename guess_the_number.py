@@ -1,5 +1,6 @@
 import random
 
+count = 0
 correct = 'you guessed correctly!'
 too_low = 'too low'
 too_high = 'too high'
@@ -16,7 +17,9 @@ def generate_secret(low, high):
 
 
 def get_guess():
+    global count
     '''get user's guess'''
+    count = count + 1
     try:
         return int(input('Guess the secret number? '))
     except:
@@ -41,7 +44,10 @@ def main():
     while True:
         guess = get_guess()
         result = check_guess(guess, secret)
-        print(result)
+        if result == "you guessed correctly!":
+            print(result + " It took you " + str(count) + " attempt(s)!")
+        else:
+            print(result)
 
         if result == correct:
             break
