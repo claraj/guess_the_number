@@ -1,7 +1,7 @@
 import random
 
 correct = 'you guessed correctly!'
-too_low = 'too low'
+Too_Low = 'Too Low'
 too_high = 'too high'
 
 
@@ -30,7 +30,7 @@ def check_guess(guess, secret):
     if guess == secret:
         return correct
     if guess < secret:
-        return too_low
+        return Too_Low
     if guess > secret:
         return too_high
 
