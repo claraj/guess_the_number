@@ -34,9 +34,13 @@ def main():
 
     (low, high) = configure_range()
     secret = generate_secret(low, high)
-
+    number_of_guesses = 0
+    print(f'Number of guesses: {str(number_of_guesses)}')
     while True:
         guess = get_guess()
+        number_of_guesses+1
+        print(f'Number of guesses: {str(number_of_guesses)}')
+        
         result = check_guess(guess, secret)
         print(result)
 
