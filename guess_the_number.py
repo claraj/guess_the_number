@@ -41,7 +41,7 @@ def main():
         print(result)
 
         if result == correct:
-            again = input('Would you like to continue? (y/n)')[0].lower()
+            again = input('Would you like to play again? (y/n)')[0].lower()
             if again !='y':
                 print('Thanks for playing!')
                 break
