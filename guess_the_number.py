@@ -7,7 +7,7 @@ too_high = 'too high'
 
 def configure_range():
     '''Set the high and low values for the random number'''
-    return 1, 1000
+    return 1, 10
 
 
 def generate_secret(low, high):
@@ -41,7 +41,13 @@ def main():
         print(result)
 
         if result == correct:
-            break
+            again = input('Would you like to continue? (y/n)')[0].lower()
+            if again !='y':
+                print('Thanks for playing!')
+                break
+            
+
+
 
 
 if __name__ == '__main__':
