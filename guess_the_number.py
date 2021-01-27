@@ -43,6 +43,5 @@ def main():
         if result == correct:
             break
 
-
 if __name__ == '__main__':
     main()
