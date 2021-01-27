@@ -22,7 +22,7 @@ def get_guess():
     except ValueError:
         print("Error please enter a valid number")
 
-        
+
 def check_guess(guess, secret):
     '''compare guess and secret, return string describing result of comparison'''
     if guess == secret:
