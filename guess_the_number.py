@@ -21,7 +21,7 @@ def get_guess():
         try:
             return int(input('Guess the secret number? '))
         except ValueError: 
-                print('INVALID - not a number! ')
+            print('INVALID - not a number! ')
 
 
 def check_guess(guess, secret):
