@@ -17,10 +17,13 @@ def generate_secret(low, high):
 
 def get_guess():
      try: 
+        return int(input('Guess the secret number? '))
+    except:
+        print("Please enter numbers only")
          
     
     
-    return int(input('Guess the secret number? '))
+   
     
    
 
