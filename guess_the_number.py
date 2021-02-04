@@ -1,5 +1,7 @@
 import random
 
+print('Guess the Number')
+
 correct = 'you guessed correctly!'
 too_low = 'too low'
 too_high = 'too high'
