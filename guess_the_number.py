@@ -1,6 +1,6 @@
 import random
 
-print('Guess the Number')
+print('Guess the Number game')
 
 correct = 'you guessed correctly!'
 too_low = 'too low'
