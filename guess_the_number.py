@@ -3,7 +3,7 @@ import random
 print('Guess the Number Game')
 
 correct = 'you guessed correctly!'
-too_low = 'too low'
+too_low = 'Too Low'
 too_high = 'too high'
 
 
@@ -18,13 +18,13 @@ def generate_secret(low, high):
 
 
 def get_guess():
-     try: 
+    try: 
         return int(input('Guess the secret number? '))
     except:
         print("Please enter numbers only")
          
     
-    
+ 
    
     
    
@@ -44,16 +44,18 @@ def main():
 
     (low, high) = configure_range()
     secret = generate_secret(low, high)
+    counter = 0 
 
     while True:
         guess = get_guess()
         result = check_guess(guess, secret)
+        counter = counter+1
         print(result)
 
         if result == correct:
             break
 
-    print('Thanks for playing the game!')
+    print(f'Thanks for playing the game! You guessed {counter} times.')
 
 
 if __name__ == '__main__':
