@@ -2,7 +2,7 @@ import random
 
 correct = 'you guessed correctly!'
 too_low = 'too low'
-too_high = 'too high'
+too_high = 'too high!!!!!'
 
 
 def configure_range():
