@@ -3,6 +3,7 @@ import random
 correct = 'you guessed correctly!'
 too_low = 'too low'
 too_high = 'too high'
+thanks = 'Thanks, '
 
 
 def configure_range():
@@ -17,7 +18,7 @@ def generate_secret(low, high):
 
 def get_guess():
     """ get user's guess, as an integer number """
-    return int(input('Guess the secret number? '))
+    return int(input('Guess the secret number, Please? '))
 
 
 def check_guess(guess, secret):
@@ -34,11 +35,11 @@ def main():
 
     (low, high) = configure_range()
     secret = generate_secret(low, high)
-
+    
     while True:
         guess = get_guess()
         result = check_guess(guess, secret)
-        print(result)
+        print(thanks,result)
 
         if result == correct:
             break
