@@ -41,6 +41,7 @@ def main():
     secret = generate_secret(low, high)
 
     while True:
+        #Added guess counter to code
         guess = get_guess()
         result = check_guess(guess, secret)
         print(result)
