@@ -22,7 +22,6 @@ def get_guess():
             return int(input('Guess the secret number? '))
         except:
             print('That is not a number')
-            continue
             
 
 
