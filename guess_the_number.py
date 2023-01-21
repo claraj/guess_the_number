@@ -47,9 +47,11 @@ def main():
         print(result)
         # guess counter
         guess_count = guess_count - 1
+        guess_attempt = guess_attempt + 1
         if result == correct:
+            print(f'It took you {guess_attempt} guesses.')
             break
-        elif guess_count != guess_attempt:
+        elif guess_count != 0:
             print(f'You have {guess_count} guesses left.')
         elif guess_count == 0:
             print('No more guesses')
