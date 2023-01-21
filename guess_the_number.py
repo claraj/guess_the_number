@@ -36,7 +36,8 @@ def check_guess(guess, secret):
 
 
 def main():
-
+    guess_attempt = 0
+    guess_count = 5
     (low, high) = configure_range()
     secret = generate_secret(low, high)
 
@@ -44,8 +45,14 @@ def main():
         guess = get_guess()
         result = check_guess(guess, secret)
         print(result)
-
+        
+        guess_count = guess_count - 1
         if result == correct:
+            break
+        elif guess_count != guess_attempt:
+            print(f'You have {guess_count} guesses left.')
+        elif guess_count == 0:
+            print('No more guesses')
             break
 
     print('Thanks for playing the game!')
