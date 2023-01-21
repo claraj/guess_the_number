@@ -1,7 +1,7 @@
 import random
 
 correct = 'you guessed correctly!'
-too_low = 'too low'
+too_low = 'too low!!'
 too_high = 'too high'
 
 
@@ -49,8 +49,12 @@ def main():
         guess_count = guess_count - 1
         guess_attempt = guess_attempt + 1
         if result == correct:
-            print(f'It took you {guess_attempt} guesses.')
-            break
+            if guess_attempt == 1:
+                print(f'It took you {guess_attempt} guess.')
+                break
+            else:
+                print(f'It took you {guess_attempt} guesses.')
+                break
         elif guess_count != 0:
             print(f'You have {guess_count} guesses left.')
         elif guess_count == 0:
