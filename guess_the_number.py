@@ -34,6 +34,7 @@ def main():
 
     (low, high) = configure_range()
     secret = generate_secret(low, high)
+    guess_count = 0
 
     while True:
         guess = get_guess()
@@ -42,8 +43,10 @@ def main():
 
         if result == correct:
             break
-
+        else:
+            guess_count+=1
     print('Thanks for playing the game!')
+    print(f'You took {guess_count} guesses')
 
 
 if __name__ == '__main__':
