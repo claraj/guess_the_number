@@ -31,6 +31,7 @@ def check_guess(guess, secret):
 
 
 def main():
+    # guess attempt and counter
     guess_attempt = 0
     guess_count = 5
     (low, high) = configure_range()
