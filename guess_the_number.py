@@ -34,6 +34,7 @@ def get_guess():
             return users_input
 
 
+
 def check_guess(guess, secret):
     """compare guess and secret, return string describing result of comparison"""
     if guess == secret:
@@ -49,14 +50,21 @@ def main():
     while True:
         (low, high) = configure_range()
         secret = generate_secret(low, high)
-
+        
+        # Total guess counter is initialize with 0 at first
+        count = 0
+        
         while True:
             guess = get_guess()
             result = check_guess(guess, secret)
+             # Add 1 count to guess counter when users guess
+            count += 1
             print(result)
 
 
             if result == correct:
+               # If the guess is correct, show the counter
+                print(f"Total guess: {count}")
                 break
 
     print("Thanks for playing the game!")
