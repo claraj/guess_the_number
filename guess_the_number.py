@@ -1,5 +1,7 @@
 import random
 
+import pyinputplus as pyip
+
 correct = 'you guessed correctly!'
 too_low = 'too low'
 too_high = 'too high'
@@ -17,7 +19,10 @@ def generate_secret(low, high):
 
 def get_guess():
     """ get user's guess, as an integer number """
-    return int(input('Guess the secret number? '))
+    user_num = int(pyip.inputNum('Guess the secret number? '))
+    while user_num < 0 or user_num > 10:
+        user_num = int(pyip.inputNum('Guess the secret number (Between 1 and 10)? '))
+    return user_num
 
 
 def check_guess(guess, secret):
@@ -31,7 +36,6 @@ def check_guess(guess, secret):
 
 
 def main():
-
     (low, high) = configure_range()
     secret = generate_secret(low, high)
 
