@@ -19,19 +19,20 @@ def generate_secret(low, high):
 
 def get_guess():
     """get user's guess, as an integer number"""
-    # Users input validation
-    # Used a while loop to keep asking for the correct input. If users input something other than an integer, then it throw an print exception in terminal and retry again, else return users' guessed number
+    
     while True:
+        # Use try and except clauses. Try to get users number and if it is not an integer, return again to get users input again
         try:
-            users_input = int(input("Guess the secret number? "))
+            # Moved users input to be stored in a variable instead.
+            user_guess = int(input("Guess the secret number? "))
 
         except:
-            # Print the error message to users.
+            # Catches the clause if it is anything else besides an integer. Prints a message to users terminal to prompt and enter a input
             print("Input a integer please.")
 
         else:
-            # Else, if everything passes, then return the users input number
-            return users_input
+            # If everything checkouts, return the user number guess.
+            return user_guess
 
 
 
@@ -46,7 +47,9 @@ def check_guess(guess, secret):
 
 
 def main():
+
     # This while loop allows the game to be re-run
+
     while True:
         (low, high) = configure_range()
         secret = generate_secret(low, high)
@@ -75,6 +78,7 @@ def main():
         # If user choice is "x", stop the game. The users input is converted to lowercase method is used to match the lower case "x" to be true. Specific if users want to use uppercase X.
         if user_choice.lower() == "x":
             break
+
 
 
 if __name__ == "__main__":
