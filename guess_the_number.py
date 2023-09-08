@@ -1,9 +1,9 @@
 import random
 
 
-correct = "you guessed correctly!"
-too_low = "too low"
-too_high = "too high"
+CORRECT = "you guessed correctly!"
+TOO_LOW = "too low"
+TOO_HIGH = "too high"
 
 
 def configure_range():
@@ -38,11 +38,11 @@ def get_guess():
 def check_guess(guess, secret):
     """compare guess and secret, return string describing result of comparison"""
     if guess == secret:
-        return correct
+        return CORRECT
     if guess < secret:
-        return too_low
+        return TOO_LOW
     if guess > secret:
-        return too_high
+        return TOO_HIGH
 
 
 def main():
@@ -62,7 +62,7 @@ def main():
             count += 1
             print(result)
 
-            if result == correct:
+            if result == CORRECT:
                 # If the guess is correct, show the counter
                 print(f"Total guess: {count}")
                 break
