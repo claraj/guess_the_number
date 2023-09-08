@@ -36,12 +36,15 @@ def main():
     secret = generate_secret(low, high)
 
     while True:
-        guess = get_guess()
-        result = check_guess(guess, secret)
-        print(result)
+        try:
+            guess = get_guess()
+            result = check_guess(guess, secret)
+            print(result)
 
-        if result == correct:
-            break
+            if result == correct:
+                break
+        except ValueError:
+            print("oops, This is not an integer value , please try again!")
 
     print('Thanks for playing the game!')
 
