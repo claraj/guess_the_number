@@ -17,7 +17,10 @@ def generate_secret(low, high):
 
 def get_guess():
     """ get user's guess, as an integer number """
-    return int(input('Guess the secret number? '))
+    try:
+        return int(input('Guess the secret number? '))
+    except:
+        return print("::BLEEP BLOOP::  DID NOT ENTER A VALID VALIDATION.")
 
 
 def check_guess(guess, secret):
@@ -31,7 +34,6 @@ def check_guess(guess, secret):
 
 
 def main():
-
     (low, high) = configure_range()
     secret = generate_secret(low, high)
 
