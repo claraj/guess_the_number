@@ -20,7 +20,7 @@ def get_guess():
     while True:
         try:
             return int(input('Guess the secret number? '))
-        except:
+        except ValueError:
             print('Must enter a whole number from 1-10')
 
 def check_guess(guess, secret):
