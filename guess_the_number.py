@@ -34,9 +34,11 @@ def main():
 
     (low, high) = configure_range()
     secret = generate_secret(low, high)
+    guesses = 0     #Initialize the guess counter
 
     while True:
         guess = get_guess()
+        guesses += 1 # Increment the guess counter when the loop repeats
         result = check_guess(guess, secret)
         print(result)
 
