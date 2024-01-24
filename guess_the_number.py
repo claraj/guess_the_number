@@ -33,9 +33,13 @@ def check_guess(guess, secret):
 def main():
 
     (low, high) = configure_range()
-    secret = generate_secret(low, high)
+    secret = generate_secret(low, high) #
+
+    counter = 0   # This is going to track the number of guesses
 
     while True:
+
+        counter += 1   # increment for counter
         guess = get_guess()
         result = check_guess(guess, secret)
         print(result)
@@ -43,7 +47,7 @@ def main():
         if result == correct:
             break
 
-    print('Thanks for playing the game!')
+    print(f'Thanks for playing the game! The number of guesses it took {counter}')
 
 
 if __name__ == '__main__':
