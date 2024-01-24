@@ -17,7 +17,18 @@ def generate_secret(low, high):
 
 def get_guess():
     """ get user's guess, as an integer number """
-    return int(input('Guess the secret number? '))
+    """ taken from https://stackoverflow.com/questions/11594605/python-excepting-input-only-if-in-range"""
+    while True:
+        try:
+            user_input = int(input('Pick a number in range 1-10 >>> '))
+        except ValueError: # just catch the exceptions you know!
+            print ('That\'s not a number!')
+        else:
+            if 1 <= user_input < 10: # this is faster
+                break
+            else:
+                print ('Out of range. Try again')
+
 
 
 def check_guess(guess, secret):
