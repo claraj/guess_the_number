@@ -17,7 +17,8 @@ def generate_secret(low, high):
 
 def get_guess():
     """ get user's guess, as an integer number """
-    return int(input('Guess the secret number? '))
+    return int(input('\n\nGuess the secret number? '))
+    
 
 
 def check_guess(guess, secret):
@@ -36,14 +37,17 @@ def main():
     secret = generate_secret(low, high)
 
     while True:
-        guess = get_guess()
-        result = check_guess(guess, secret)
-        print(result)
+        try:
+            guess = get_guess()
+            result = check_guess(guess, secret)
+            print(result)
 
-        if result == correct:
-            break
+            if result == correct:
+                break
 
-    print('Thanks for playing the game!')
+            print('Thanks for playing the game!')
+        except ValueError:
+            print("Please enter a valid integer")
 
 
 if __name__ == '__main__':
